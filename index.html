@@ -306,6 +306,28 @@
             transform: translateY(-2px);
         }
 
+        .about-box{
+            background: white;
+            border: 1px solid #eee;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.03);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-box p{
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 0 0 14px 0;
+        }
+
+        .about-box a{
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .about-box a:hover{ text-decoration: underline; }
+
         .testimonial-wrap{
             width: min(900px, calc(100% - 32px));
             margin: 0 auto;
@@ -317,6 +339,13 @@
         .testimonial-wrap h3{
             margin: 0 0 8px 0;
             font-size: 26px;
+        }
+
+        .testimonials-list{
+            display: grid;
+            gap: 18px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .contact-grid{
@@ -352,6 +381,52 @@
 
         .contact-box a:hover{ text-decoration: underline; }
 
+        .ml-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .ml-card{
+            background: white;
+            border: 1px solid #eee;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.03);
+        }
+
+        .ml-card img{
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .ml-card h4{
+            margin: 0 0 8px 0;
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            color: var(--green);
+        }
+
+        .ml-card p{
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .ml-card a{
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: .05em;
+        }
+
+        .ml-card a:hover{ background: var(--green-dark); }
+
         footer{
             background: #000;
             color: #fff;
@@ -383,6 +458,7 @@
             .benefit{ font-size: 26px; }
             .category-grid{ grid-template-columns: repeat(2, 1fr); }
             .contact-grid{ grid-template-columns: 1fr; }
+            .ml-grid{ grid-template-columns: 1fr; }
             .header-right{ align-items: flex-start; }
         }
 
@@ -420,7 +496,7 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#categorias">Repuestos</a>
                 <a href="#nosotros">Quienes somos</a>
-                <a href="#taller">Taller Motor Perfect</a>
+                <a href="#mercadolibre">Mercado Libre</a>
                 <a href="#contacto">Contacto</a>
             </nav>
 
@@ -448,9 +524,7 @@
         <div class="hero-overlay">
             <h3>REPUESTOS DE AUTOMOVILES</h3>
             <div class="sub">TODO LO QUE NECESITES EN UN SOLO LUGAR</div>
-            <a class="cta" href="https://fybinversionesccs.wixsite.com/fb-parts/quienessomos">
-                SOBRE NOSOTROS ...
-            </a>
+            <a class="cta" href="#nosotros">SOBRE NOSOTROS ...</a>
         </div>
 
         <div class="dots">
@@ -489,7 +563,7 @@
     <section id="nosotros" class="block">
         <div class="container">
             <h2 class="section-title">QUIENES SOMOS</h2>
-            <div class="contact-box" style="max-width: 1000px; margin: 0 auto;">
+            <div class="about-box">
                 <p>Bienvenido a nuestra tienda de repuestos. En FB PARTS nos enorgullece ofrecer una amplia variedad de repuestos para todo tipo de vehículos. Ya sea que necesites repuestos para tu automóvil o camión, estamos aquí para ayudarte.</p>
                 <p><strong>Nuestros productos:</strong></p>
                 <p><strong>Repuestos de motor:</strong> Tenemos una gran selección de repuestos de calidad para motores. Desde filtros de aire y aceite hasta bujías y correas, contamos con todo lo que necesitas para mantener tu motor funcionando sin problemas.</p>
@@ -507,9 +581,49 @@
     <section class="block">
         <div class="container">
             <h2 class="section-title">RESEÑAS DE CLIENTES</h2>
-            <div class="testimonial-wrap">
-                <h3>Lux Motors, Caracas VE</h3>
-                <p>“Servicio muy rapido, excelente precios, atención profesional y amplia gama de repuestos.”</p>
+            <div class="testimonials-list">
+                <div class="testimonial-wrap">
+                    <h3>Lux Motors, Caracas VE</h3>
+                    <p>“Servicio muy rapido, excelente precios, atención profesional y amplia gama de repuestos.”</p>
+                </div>
+
+                <div class="testimonial-wrap">
+                    <h3>Maria Romero, Caracas VE</h3>
+                    <p>“Excelente atención, buenos precios, personal calificado para dar la mejor atención y puntuales con las entregas.”</p>
+                </div>
+
+                <div class="testimonial-wrap">
+                    <h3>Luisa Ruiz, Caracas VE</h3>
+                    <p>“Buena atencion personas responsables y puntuales, vendieron lo que solicite.”</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mercadolibre" class="block categories">
+        <div class="container">
+            <h2 class="section-title">CATALOGO MERCADO LIBRE</h2>
+            <div class="ml-grid">
+                <div class="ml-card">
+                    <img src="https://via.placeholder.com/600x400?text=Producto+1" alt="Producto Mercado Libre 1">
+                    <h4>Producto Destacado 1</h4>
+                    <p>Descripción breve del repuesto. Ideal para mostrar tus productos más vendidos.</p>
+                    <a href="https://www.mercadolibre.com" target="_blank">VER EN MERCADO LIBRE</a>
+                </div>
+
+                <div class="ml-card">
+                    <img src="https://via.placeholder.com/600x400?text=Producto+2" alt="Producto Mercado Libre 2">
+                    <h4>Producto Destacado 2</h4>
+                    <p>Agrega aquí la información real de tu publicación para llevar clientes directo al anuncio.</p>
+                    <a href="https://www.mercadolibre.com" target="_blank">VER EN MERCADO LIBRE</a>
+                </div>
+
+                <div class="ml-card">
+                    <img src="https://via.placeholder.com/600x400?text=Producto+3" alt="Producto Mercado Libre 3">
+                    <h4>Producto Destacado 3</h4>
+                    <p>Esta sección luego podemos conectarla a tus enlaces reales de Mercado Libre.</p>
+                    <a href="https://www.mercadolibre.com" target="_blank">VER EN MERCADO LIBRE</a>
+                </div>
             </div>
         </div>
     </section>
@@ -528,7 +642,7 @@
                     <p><a href="mailto:fybinversiones.ccs@gmail.com">fybinversiones.ccs@gmail.com</a></p>
                 </div>
 
-                <div id="taller" class="contact-box">
+                <div class="contact-box">
                     <h3>TALLER MOTOR PERFECT</h3>
                     <p>Espacio reservado para integrar información del taller, servicios, ubicación o enlace directo, tal como aparece en tu sitio original.</p>
                 </div>
