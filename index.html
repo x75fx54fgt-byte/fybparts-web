@@ -196,40 +196,6 @@
 
         .hero .cta:hover{ background: var(--green-dark); }
 
-        .arrow{
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 74px;
-            font-weight: 300;
-            text-decoration: none;
-            opacity: .9;
-            z-index: 5;
-            padding: 0 10px;
-        }
-
-        .arrow.left{ left: 24px; }
-        .arrow.right{ right: 24px; }
-
-        .dots{
-            position: absolute;
-            bottom: 22px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 14px;
-            z-index: 5;
-        }
-
-        .dots span{
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            opacity: .95;
-        }
-
         .benefits{
             background: #fff;
             padding: 14px 0 10px;
@@ -262,14 +228,9 @@
 
         .benefit:last-child{ border-right: none; }
 
-        .benefit i{
-            font-size: 28px;
-            opacity: .95;
-        }
+        .benefit i{ font-size: 28px; opacity: .95; }
 
-        section.block{
-            padding: 70px 0;
-        }
+        section.block{ padding: 70px 0; }
 
         .section-title{
             text-align: center;
@@ -278,9 +239,7 @@
             margin: 0 0 26px;
         }
 
-        .categories{
-            background: #f8f8f8;
-        }
+        .categories{ background: #f8f8f8; }
 
         .category-grid{
             display: grid;
@@ -315,18 +274,7 @@
             margin: 0 auto;
         }
 
-        .about-box p{
-            font-size: 18px;
-            line-height: 1.7;
-            margin: 0 0 14px 0;
-        }
-
-        .about-box a{
-            color: var(--green);
-            text-decoration: none;
-        }
-
-        .about-box a:hover{ text-decoration: underline; }
+        .about-box p{ font-size: 18px; line-height: 1.7; margin: 0 0 14px 0; }
 
         .testimonial-wrap{
             width: min(900px, calc(100% - 32px));
@@ -334,19 +282,10 @@
             background: #f5f5f5;
             border-left: 5px solid var(--green);
             padding: 28px;
+            margin-bottom: 18px;
         }
 
-        .testimonial-wrap h3{
-            margin: 0 0 8px 0;
-            font-size: 26px;
-        }
-
-        .testimonials-list{
-            display: grid;
-            gap: 18px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .testimonials-list{ max-width: 900px; margin: 0 auto; }
 
         .contact-grid{
             display: grid;
@@ -362,30 +301,9 @@
             box-shadow: 0 2px 8px rgba(0,0,0,.03);
         }
 
-        .contact-box h3{
-            margin-top: 0;
-            color: var(--green);
-            font-size: 34px;
-        }
+        .contact-box h3{ margin-top: 0; color: var(--green); font-size: 34px; }
 
-        .contact-box p{
-            font-size: 18px;
-            line-height: 1.7;
-            margin: 0 0 14px 0;
-        }
-
-        .contact-box a{
-            color: var(--green);
-            text-decoration: none;
-        }
-
-        .contact-box a:hover{ text-decoration: underline; }
-
-        .ml-grid{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
+        .ml-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
         .ml-card{
             background: white;
@@ -394,88 +312,21 @@
             box-shadow: 0 2px 8px rgba(0,0,0,.03);
         }
 
-        .ml-card img{
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            display: block;
-            margin-bottom: 12px;
-        }
+        .ml-card img{ width: 100%; height: 170px; object-fit: cover; margin-bottom: 12px; }
+        .ml-card h4{ margin: 0 0 8px 0; font-family: 'Oswald', sans-serif; font-size: 24px; color: var(--green); }
+        .ml-card a{ display: inline-block; background: var(--green); color: white; text-decoration: none; padding: 10px 14px; font-family: 'Oswald', sans-serif; letter-spacing: .05em; }
 
-        .ml-card h4{
-            margin: 0 0 8px 0;
-            font-family: 'Oswald', sans-serif;
-            font-size: 24px;
-            color: var(--green);
-        }
+        footer{ background: #000; color: #fff; text-align: center; padding: 22px 16px; }
 
-        .ml-card p{
-            margin: 0 0 12px 0;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        .ml-card a{
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            text-decoration: none;
-            padding: 10px 14px;
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: .05em;
-        }
-
-        .ml-card a:hover{ background: var(--green-dark); }
-
-        footer{
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 22px 16px;
-            margin-top: 0;
-        }
-
-        .mobile-menu{
-            display: none;
-        }
+        .mobile-menu{ display: none; }
 
         @media (max-width: 1100px){
             nav{ display: none; }
-            .mobile-menu{
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 44px;
-                height: 44px;
-                border: 1px solid #ddd;
-                background: #fff;
-                color: var(--green);
-                font-size: 20px;
-            }
-            .hero h1{ font-size: 48px; }
-            .hero .sub{ font-size: 22px; }
+            .mobile-menu{ display: inline-flex; }
             .benefits-inner{ grid-template-columns: repeat(2, 1fr); }
-            .benefit{ font-size: 26px; }
             .category-grid{ grid-template-columns: repeat(2, 1fr); }
-            .contact-grid{ grid-template-columns: 1fr; }
             .ml-grid{ grid-template-columns: 1fr; }
-            .header-right{ align-items: flex-start; }
-        }
-
-        @media (max-width: 700px){
-            .topbar h2{ font-size: 22px; }
-            .topbar span{ position: static; display: block; margin-top: 4px; }
-            .hero{ min-height: 60vh; }
-            .hero-overlay{ padding: 30px 18px; }
-            .hero h1{ font-size: 34px; }
-            .hero h3{ font-size: 18px; }
-            .hero .sub{ font-size: 18px; }
-            .call-btn{ font-size: 18px; }
-            .benefits-inner{ grid-template-columns: 1fr; }
-            .benefit{ justify-content: flex-start; font-size: 24px; }
-            .category-grid{ grid-template-columns: 1fr; }
-            .section-title{ font-size: 38px; }
-            .contact-box h3{ font-size: 28px; }
+            .contact-grid{ grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -504,33 +355,15 @@
                 <a class="call-btn" href="https://api.whatsapp.com/send?phone=584120161036" target="_blank">
                     LLAMA AHORA <i class="fas fa-phone"></i>
                 </a>
-                <div class="social">
-                    <a href="https://instagram.com/fybparts" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/FB-PARTS-109647624743542/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=584120161036" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
             </div>
-
-            <button class="mobile-menu" aria-label="Menú">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </header>
 
     <section id="inicio" class="hero">
-        <a class="arrow left" href="#" aria-label="Anterior"><i class="fas fa-chevron-left"></i></a>
-        <a class="arrow right" href="#" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></a>
-
         <div class="hero-overlay">
             <h3>REPUESTOS DE AUTOMOVILES</h3>
             <div class="sub">TODO LO QUE NECESITES EN UN SOLO LUGAR</div>
             <a class="cta" href="#nosotros">SOBRE NOSOTROS ...</a>
-        </div>
-
-        <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
         </div>
     </section>
 
@@ -547,15 +380,15 @@
         <div class="container">
             <h2 class="section-title">CATEGORIAS</h2>
             <div class="category-grid">
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">SISTEMA DE FRENO</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">BOMBAS DE GASOLINA</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">FILTROS DE AIRES</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">FAROS Y MICAS</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">BOMBAS DE AGUA</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">BOMBAS DE ACEITE</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">MULTIPLE ADMISION</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">CARROCERIA</a>
-                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">OTRAS CATEGORIAS</a>
+                <a class="category-card" href="#">SISTEMA DE FRENO</a>
+                <a class="category-card" href="#">BOMBAS DE GASOLINA</a>
+                <a class="category-card" href="#">FILTROS DE AIRES</a>
+                <a class="category-card" href="#">FAROS Y MICAS</a>
+                <a class="category-card" href="#">BOMBAS DE AGUA</a>
+                <a class="category-card" href="#">BOMBAS DE ACEITE</a>
+                <a class="category-card" href="#">MULTIPLE ADMISION</a>
+                <a class="category-card" href="#">CARROCERIA</a>
+                <a class="category-card" href="#">OTRAS CATEGORIAS</a>
             </div>
         </div>
     </section>
@@ -564,16 +397,9 @@
         <div class="container">
             <h2 class="section-title">QUIENES SOMOS</h2>
             <div class="about-box">
-                <p>Bienvenido a nuestra tienda de repuestos. En FB PARTS nos enorgullece ofrecer una amplia variedad de repuestos para todo tipo de vehículos. Ya sea que necesites repuestos para tu automóvil o camión, estamos aquí para ayudarte.</p>
-                <p><strong>Nuestros productos:</strong></p>
-                <p><strong>Repuestos de motor:</strong> Tenemos una gran selección de repuestos de calidad para motores. Desde filtros de aire y aceite hasta bujías y correas, contamos con todo lo que necesitas para mantener tu motor funcionando sin problemas.</p>
-                <p><strong>Repuestos de carrocería:</strong> Si necesitas reparar daños en la carrocería de tu vehículo, tenemos paneles, guardabarros, parachoques y más. Nuestros repuestos de carrocería están diseñados para adaptarse perfectamente a diferentes modelos y marcas de automóviles.</p>
-                <p><strong>Repuestos de suspensión:</strong> Si sientes que tu vehículo no está ofreciendo una experiencia de conducción suave, es posible que necesites repuestos de suspensión. Ofrecemos una amplia gama de amortiguadores, resortes y otras piezas de suspensión para mejorar la comodidad y el rendimiento de tu vehículo.</p>
-                <p><strong>Repuestos de frenos:</strong> La seguridad es nuestra máxima prioridad. Por eso ofrecemos una variedad de repuestos de frenos de alta calidad, como pastillas, discos y líquidos de frenos. Mantén tus frenos en perfecto estado con nuestros repuestos confiables.</p>
-                <p><strong>Accesorios y herramientas:</strong> Además de repuestos, también ofrecemos una variedad de accesorios y herramientas para tu vehículo. Desde aceites y lubricantes hasta herramientas de mano, tenemos todo lo que necesitas para el mantenimiento de tu vehículo.</p>
-                <p><strong>¡Llámanos hoy mismo!</strong></p>
-                <p>Nuestro amable y conocedor equipo estará encantado de ayudarte a encontrar el repuesto exacto que necesitas.</p>
-                <p><a href="mailto:fybinversiones.ccs@gmail.com">fybinversiones.ccs@gmail.com</a></p>
+                <p>Bienvenido a nuestra tienda de repuestos. En FB PARTS nos enorgullece ofrecer una amplia variedad de repuestos para todo tipo de vehículos.</p>
+                <p><strong>Nuestros productos incluyen:</strong></p>
+                <p>Repuestos de motor, carrocería, suspensión, frenos y más. ¡Llámanos hoy mismo!</p>
             </div>
         </div>
     </section>
@@ -586,15 +412,9 @@
                     <h3>Lux Motors, Caracas VE</h3>
                     <p>“Servicio muy rapido, excelente precios, atención profesional y amplia gama de repuestos.”</p>
                 </div>
-
                 <div class="testimonial-wrap">
                     <h3>Maria Romero, Caracas VE</h3>
-                    <p>“Excelente atención, buenos precios, personal calificado para dar la mejor atención y puntuales con las entregas.”</p>
-                </div>
-
-                <div class="testimonial-wrap">
-                    <h3>Luisa Ruiz, Caracas VE</h3>
-                    <p>“Buena atencion personas responsables y puntuales, vendieron lo que solicite.”</p>
+                    <p>“Excelente atención, buenos precios, personal calificado para dar la mejor atención.”</p>
                 </div>
             </div>
         </div>
@@ -603,64 +423,47 @@
     <section id="mercadolibre" class="block categories">
         <div class="container">
             <h2 class="section-title">CATALOGO MERCADO LIBRE</h2>
-            <div class="about-box" style="max-width: 1000px; margin-bottom: 25px;">
-                <p>Explora todas nuestras publicaciones activas de Mercado Libre desde el siguiente enlace. Aquí encontrarás repuestos disponibles, precios y detalles actualizados.</p>
-                <p>
-                    <a href="https://listado.mercadolibre.com.ve/_CustId_1156015281_NoIndex_True" target="_blank" style="display:inline-block; background:#5e8877; color:white; padding:12px 18px; text-decoration:none; font-family:'Oswald', sans-serif; letter-spacing:.05em;">
-                        VER CATÁLOGO COMPLETO
-                    </a>
-                </p>
-            </div>
-
             <div class="ml-grid">
                 <div class="ml-card">
-                    <img src="https://via.placeholder.com/600x400?text=Mercado+Libre" alt="Catálogo Mercado Libre">
-                    <h4>PRODUCTO DESTACADO</h4>
-                    <p>Accede a todas las publicaciones activas de tu tienda en Mercado Libre.</p>
-                    <a href="https://articulo.mercadolibre.com.ve/MLV-776776931-alarma-de-carro-cierre-centralizado-codigo-variable-cromo-_JM#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=1&type=item&tracking_id=62b6c609-783c-40ec-8842-5e4d9ec648ef&wid=MLV776776931&sid=search">COMPRA AQUI</a>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_668972-MLV776776931_062026-O.webp" alt="Alarma">
+                    <h4>Alarma de Carro</h4>
+                    <p>Cierre centralizado, código variable, acabado cromo.</p>
+                    <a href="https://articulo.mercadolibre.com.ve/MLV-776776931-alarma-de-carro-cierre-centralizado-codigo-variable-cromo-_JM" target="_blank">VER EN MERCADO LIBRE</a>
                 </div>
-
                 <div class="ml-card">
-                    <img src="https://via.placeholder.com/600x400?text=Repuestos" alt="Repuestos">
-                    <h4>PRODUCTO DESTACADO</h4>
-                    <p>Repuestos automotrices para motor, frenos, carrocería y más.</p>
-                    <a href="https://articulo.mercadolibre.com.ve/MLV-776144781-rin-toyota-yaris-2017-2023-15-_JM?searchVariation=201462099633#polycard_client=search-desktop&be_origin=backend&searchVariation=201462099633&search_layout=grid&position=2&type=item&tracking_id=62b6c609-783c-40ec-8842-5e4d9ec648ef">COMPRA AQUI</a>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_890736-MLV776144781_062026-O.webp" alt="Rin">
+                    <h4>Rin Toyota Yaris</h4>
+                    <p>Rin original para modelos 2017-2023, medida 15".</p>
+                    <a href="https://articulo.mercadolibre.com.ve/MLV-776144781-rin-toyota-yaris-2017-2023-15-_JM" target="_blank">VER EN MERCADO LIBRE</a>
                 </div>
-
                 <div class="ml-card">
-                    <img src="https://via.placeholder.com/600x400?text=Ofertas" alt="Ofertas">
-                    <h4>PRODUCTO DESTACADO</h4>
-                    <p>Consulta inventario y nuevas publicaciones directamente desde Mercado Libre.</p>
-                    <a href="https://articulo.mercadolibre.com.ve/MLV-776157903-parilla-frontal-mercedes-benz-c180-c200-c280-2007-2011-_JM?searchVariation=194217334838#polycard_client=search-desktop&be_origin=backend&searchVariation=194217334838&search_layout=grid&position=7&type=item&tracking_id=f8485e43-64c2-407a-9dec-9e53162bb0f3">COMPRA AQUI</a>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_663378-MLV776157903_062026-O.webp" alt="Parrilla">
+                    <h4>Parrilla Frontal Mercedes</h4>
+                    <p>Compatible para Mercedes Benz C180/C200/C280 (2007-2011).</p>
+                    <a href="https://articulo.mercadolibre.com.ve/MLV-776157903-parilla-frontal-mercedes-benz-c180-c200-c280-2007-2011-_JM" target="_blank">VER EN MERCADO LIBRE</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="block categories">
+    <section id="contacto" class="block">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-box">
                     <h3>CONTACTOS</h3>
-                    <p><strong>Dirección</strong><br>15 Pje. Porvenir, Caracas 1010, Distrito Capital</p>
-                    <p>0212 - 551 - 3003</p>
-                    <p>0412 - 016 - 1036</p>
-                    <p>0424 - 200 - 4842</p>
-                    <p><strong>Horarios</strong><br>Lunes - viernes: 9:00 am – 4:00 pm<br>Sábados: 9:00 am – 1:00 pm</p>
-                    <p><a href="mailto:fybinversiones.ccs@gmail.com">fybinversiones.ccs@gmail.com</a></p>
+                    <p><strong>Dirección:</strong> 15 Pje. Porvenir, Caracas 1010</p>
+                    <p><strong>Teléfonos:</strong><br>0212 - 551 - 3003<br>0412 - 016 - 1036</p>
                 </div>
-
                 <div class="contact-box">
                     <h3>TALLER MOTOR PERFECT</h3>
-                    <p>Espacio reservado para integrar información del taller, servicios, ubicación o enlace directo, tal como aparece en tu sitio original.</p>
+                    <p>Servicios especializados y mantenimiento integral para tu vehículo.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p class="oswald" style="margin:0; font-size:16px;">©2023 por F&B PARTS.</p>
-       
+        <p>©2026 por F&B PARTS.</p>
     </footer>
 
 </body>
