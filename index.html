@@ -1,127 +1,535 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inversiones FB Parts, C.A. | Repuestos de Automóviles</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
-        h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; }
-        body { font-family: 'Roboto', sans-serif; background-color: #ffffff; color: #333333; }
 
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-            url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1920');
-            background-size: cover;
-            background-position: center;
+        :root{
+            --green:#5e8877;
+            --green-dark:#4d7162;
+            --light:#f7f7f7;
+            --text:#2e2e2e;
         }
 
-        .hero-overlay {
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(2px);
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #fff;
+            color: var(--text);
+        }
+
+        h1, h2, h3, .oswald {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: .02em;
+        }
+
+        .topbar{
+            background: var(--green);
+            color: white;
+            text-align: center;
+            padding: 10px 15px;
+            position: relative;
+            line-height: 1.1;
+        }
+
+        .topbar h2{
+            margin: 0;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .topbar span{
+            position: absolute;
+            right: 18px;
+            bottom: 6px;
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: .08em;
+        }
+
+        header{
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: white;
+            border-bottom: 1px solid #efefef;
+            box-shadow: 0 1px 12px rgba(0,0,0,.04);
+        }
+
+        .container{
+            width: min(1200px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .header-wrap{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .logo img{
+            height: 74px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        nav{
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+
+        nav a{
+            text-decoration: none;
+            color: var(--green);
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        nav a:hover{ color: #000; }
+
+        .header-right{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .call-btn{
+            background: var(--green);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 22px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            letter-spacing: .06em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .call-btn:hover{
+            background: var(--green-dark);
+        }
+
+        .social{
+            display: flex;
+            gap: 14px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .social a{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .hero{
+            position: relative;
+            min-height: 72vh;
+            background:
+                linear-gradient(rgba(0,0,0,.32), rgba(0,0,0,.32)),
+                url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay{
+            width: min(980px, calc(100% - 40px));
+            background: rgba(255,255,255,.82);
+            padding: 58px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,.12);
+        }
+
+        .hero h3{
+            margin: 0 0 10px 0;
+            color: var(--green);
+            font-size: 24px;
+            letter-spacing: .22em;
+            font-weight: 700;
+        }
+
+        .hero h1{
+            margin: 0;
+            color: var(--green);
+            font-size: 62px;
+            line-height: 1.05;
+            font-weight: 700;
+        }
+
+        .hero .sub{
+            margin: 10px 0 30px;
+            color: var(--green);
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            letter-spacing: .08em;
+        }
+
+        .hero .cta{
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            padding: 13px 24px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            letter-spacing: .12em;
+        }
+
+        .hero .cta:hover{ background: var(--green-dark); }
+
+        .arrow{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 74px;
+            font-weight: 300;
+            text-decoration: none;
+            opacity: .9;
+            z-index: 5;
+            padding: 0 10px;
+        }
+
+        .arrow.left{ left: 24px; }
+        .arrow.right{ right: 24px; }
+
+        .dots{
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 14px;
+            z-index: 5;
+        }
+
+        .dots span{
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: .95;
+        }
+
+        .benefits{
+            background: #fff;
+            padding: 14px 0 10px;
+        }
+
+        .benefits-inner{
+            width: min(1540px, calc(100% - 46px));
+            margin: 0 auto;
+            background: linear-gradient(90deg, #8f9ea8 0%, #7fa090 34%, #a6a6a6 100%);
+            color: #fff;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            min-height: 86px;
+        }
+
+        .benefit{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 18px 12px;
+            border-right: 1px solid rgba(255,255,255,.12);
+            font-family: 'Oswald', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            white-space: nowrap;
+        }
+
+        .benefit:last-child{ border-right: none; }
+
+        .benefit i{
+            font-size: 28px;
+            opacity: .95;
+        }
+
+        section.block{
+            padding: 70px 0;
+        }
+
+        .section-title{
+            text-align: center;
+            color: var(--green);
+            font-size: 54px;
+            margin: 0 0 26px;
+        }
+
+        .categories{
+            background: #f8f8f8;
+        }
+
+        .category-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .category-card{
+            background: white;
+            padding: 24px 18px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--green);
+            border: 1px solid #eee;
+            box-shadow: 0 2px 8px rgba(0,0,0,.03);
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .category-card:hover{
+            box-shadow: 0 8px 20px rgba(0,0,0,.08);
+            transform: translateY(-2px);
+        }
+
+        .testimonial-wrap{
+            width: min(900px, calc(100% - 32px));
+            margin: 0 auto;
+            background: #f5f5f5;
+            border-left: 5px solid var(--green);
+            padding: 28px;
+        }
+
+        .testimonial-wrap h3{
+            margin: 0 0 8px 0;
+            font-size: 26px;
+        }
+
+        .contact-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 34px;
+            align-items: start;
+        }
+
+        .contact-box{
+            background: white;
+            border: 1px solid #eee;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.03);
+        }
+
+        .contact-box h3{
+            margin-top: 0;
+            color: var(--green);
+            font-size: 34px;
+        }
+
+        .contact-box p{
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 0 0 14px 0;
+        }
+
+        .contact-box a{
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .contact-box a:hover{ text-decoration: underline; }
+
+        footer{
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 22px 16px;
+            margin-top: 0;
+        }
+
+        .mobile-menu{
+            display: none;
+        }
+
+        @media (max-width: 1100px){
+            nav{ display: none; }
+            .mobile-menu{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border: 1px solid #ddd;
+                background: #fff;
+                color: var(--green);
+                font-size: 20px;
+            }
+            .hero h1{ font-size: 48px; }
+            .hero .sub{ font-size: 22px; }
+            .benefits-inner{ grid-template-columns: repeat(2, 1fr); }
+            .benefit{ font-size: 26px; }
+            .category-grid{ grid-template-columns: repeat(2, 1fr); }
+            .contact-grid{ grid-template-columns: 1fr; }
+            .header-right{ align-items: flex-start; }
+        }
+
+        @media (max-width: 700px){
+            .topbar h2{ font-size: 22px; }
+            .topbar span{ position: static; display: block; margin-top: 4px; }
+            .hero{ min-height: 60vh; }
+            .hero-overlay{ padding: 30px 18px; }
+            .hero h1{ font-size: 34px; }
+            .hero h3{ font-size: 18px; }
+            .hero .sub{ font-size: 18px; }
+            .call-btn{ font-size: 18px; }
+            .benefits-inner{ grid-template-columns: 1fr; }
+            .benefit{ justify-content: flex-start; font-size: 24px; }
+            .category-grid{ grid-template-columns: 1fr; }
+            .section-title{ font-size: 38px; }
+            .contact-box h3{ font-size: 28px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-[#587b68] text-white relative flex items-center justify-center py-2 px-4 min-h-[50px]">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-widest text-center oswald">
-            DELIVERY GRATIS EN CARACAS
-        </h2>
-        <span class="absolute right-4 text-[9px] md:text-xs bottom-1 md:bottom-auto font-light tracking-wide">
-            (CIERTAS CONDICIONES APLICAN)
-        </span>
+    <div class="topbar">
+        <h2>DELIVERY GRATIS EN CARACAS</h2>
+        <span>(CIERTAS CONDICIONES APLICAN)</span>
     </div>
 
-    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex-shrink-0">
-                <a href="#">
-                    <img src="https://static.wixstatic.com/media/5c1748_5dd249cea38c4c4ba294cdd8edb75b6c~mv2.png/v1/crop/x_0,y_547,w_2395,h_1307/fill/w_135,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-FB-PARTS-COLORES-NUEVOS-_edited_edi.png" alt="LOGO F&B PARTS" class="h-16 object-contain">
-                </a>
-            </div>
+    <header>
+        <div class="container header-wrap">
+            <a class="logo" href="#inicio">
+                <img src="https://static.wixstatic.com/media/5c1748_5dd249cea38c4c4ba294cdd8edb75b6c~mv2.png/v1/crop/x_0,y_547,w_2395,h_1307/fill/w_135,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO-FB-PARTS-COLORES-NUEVOS-_edited_edi.png" alt="LOGO F&B PARTS">
+            </a>
 
-            <nav class="hidden md:flex space-x-6 text-[#587b68] text-xl oswald font-bold">
-                <a href="#" class="hover:text-black transition">Inicio</a>
-                <a href="#" class="hover:text-black transition">Repuestos</a>
-                <a href="#" class="hover:text-black transition">Quienes somos</a>
-                <a href="#" class="hover:text-black transition">Taller Motor Perfect</a>
-                <a href="#" class="hover:text-black transition">Contacto</a>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#categorias">Repuestos</a>
+                <a href="#nosotros">Quienes somos</a>
+                <a href="#taller">Taller Motor Perfect</a>
+                <a href="#contacto">Contacto</a>
             </nav>
 
-            <div class="flex flex-col items-end gap-1">
-                <a href="https://api.whatsapp.com/send?phone=584120161036" target="_blank" class="bg-[#587b68] hover:bg-opacity-90 transition text-white px-6 py-2 flex items-center gap-3 text-lg md:text-xl oswald tracking-wide">
+            <div class="header-right">
+                <a class="call-btn" href="https://api.whatsapp.com/send?phone=584120161036" target="_blank">
                     LLAMA AHORA <i class="fas fa-phone"></i>
                 </a>
-                <div class="flex space-x-4 text-black text-lg mr-1 mt-1">
-                    <a href="https://instagram.com/fybparts" target="_blank" class="hover:text-[#587b68] transition"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/FB-PARTS-109647624743542/" target="_blank" class="hover:text-[#587b68] transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=584120161036" target="_blank" class="hover:text-[#587b68] transition"><i class="fab fa-whatsapp"></i></a>
+                <div class="social">
+                    <a href="https://instagram.com/fybparts" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/FB-PARTS-109647624743542/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=584120161036" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
+
+            <button class="mobile-menu" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <section class="hero-bg relative text-white min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-black/20"></div>
+    <section id="inicio" class="hero">
+        <a class="arrow left" href="#" aria-label="Anterior"><i class="fas fa-chevron-left"></i></a>
+        <a class="arrow right" href="#" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></a>
 
-        <button class="absolute left-4 md:left-10 text-white text-4xl md:text-6xl z-20 opacity-90 hover:opacity-100 transition">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-
-        <button class="absolute right-4 md:right-10 text-white text-4xl md:text-6xl z-20 opacity-90 hover:opacity-100 transition">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-
-        <div class="relative z-10 hero-overlay w-[92%] md:w-[70%] max-w-5xl px-6 md:px-16 py-14 md:py-20 text-center shadow-2xl">
-            <h3 class="text-lg md:text-2xl tracking-[0.3em] mb-3 text-[#587b68] font-bold oswald">
-                REPUESTOS DE AUTOMÓVILES
-            </h3>
-            <h1 class="text-4xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight mb-8 text-[#587b68]">
-                TODO LO QUE NECESITES EN UN SOLO LUGAR
-            </h1>
-            <a href="https://api.whatsapp.com/send?phone=584120161036" target="_blank" class="bg-[#587b68] hover:bg-[#48685a] transition duration-300 text-white font-bold py-3 px-8 text-lg inline-block tracking-widest">
+        <div class="hero-overlay">
+            <h3>REPUESTOS DE AUTOMOVILES</h3>
+            <div class="sub">TODO LO QUE NECESITES EN UN SOLO LUGAR</div>
+            <a class="cta" href="https://fybinversionesccs.wixsite.com/fb-parts/quienessomos">
                 SOBRE NOSOTROS ...
             </a>
         </div>
 
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-            <span class="w-3 h-3 rounded-full bg-white"></span>
-            <span class="w-3 h-3 rounded-full bg-white/70"></span>
-            <span class="w-3 h-3 rounded-full bg-white/70"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </section>
 
-    <section class="bg-white py-6 px-4">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                <div class="bg-[#8a99a0] text-white flex items-center justify-center gap-3 py-5 px-4">
-                    <i class="fas fa-hand-holding-dollar text-3xl"></i>
-                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">GARANTIA</span>
+    <section class="benefits">
+        <div class="benefits-inner">
+            <div class="benefit"><i class="fas fa-box-open"></i> GARANTIA</div>
+            <div class="benefit"><i class="fas fa-truck"></i> ENVIO GRATIS</div>
+            <div class="benefit"><i class="fas fa-headset"></i> ASESORIAS</div>
+            <div class="benefit"><i class="fas fa-circle-arrow-down"></i> BAJO COSTO</div>
+        </div>
+    </section>
+
+    <section id="categorias" class="block categories">
+        <div class="container">
+            <h2 class="section-title">CATEGORIAS</h2>
+            <div class="category-grid">
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">SISTEMA DE FRENO</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">BOMBAS DE GASOLINA</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">FILTROS DE AIRES</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">FAROS Y MICAS</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">BOMBAS DE AGUA</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">BOMBAS DE ACEITE</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">MULTIPLE ADMISION</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">CARROCERIA</a>
+                <a class="category-card" href="https://fybinversionesccs.wixsite.com/fb-parts/repuestos">OTRAS CATEGORIAS</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="block">
+        <div class="container">
+            <h2 class="section-title">RESEÑAS DE CLIENTES</h2>
+            <div class="testimonial-wrap">
+                <h3>Lux Motors, Caracas VE</h3>
+                <p>“Servicio muy rapido, excelente precios, atención profesional y amplia gama de repuestos.”</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="block categories">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <h3>CONTACTOS</h3>
+                    <p><strong>Dirección</strong><br>15 Pje. Porvenir, Caracas 1010, Distrito Capital</p>
+                    <p>0212 - 551 - 3003</p>
+                    <p>0412 - 016 - 1036</p>
+                    <p>0424 - 200 - 4842</p>
+                    <p><strong>Horarios</strong><br>Lunes - viernes: 9:00 am – 4:00 pm<br>Sábados: 9:00 am – 1:00 pm</p>
+                    <p><a href="mailto:fybinversiones.ccs@gmail.com">fybinversiones.ccs@gmail.com</a></p>
+                    <p><a href="mailto:fybinversiones.ccs@gmail.com">fybinversiones.ccs@gmail.com</a></p>
                 </div>
 
-                <div class="bg-[#8f9a94] text-white flex items-center justify-center gap-3 py-5 px-4">
-                    <i class="fas fa-truck text-3xl"></i>
-                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">ENVIO GRATIS</span>
-                </div>
-
-                <div class="bg-[#94a19a] text-white flex items-center justify-center gap-3 py-5 px-4">
-                    <i class="fas fa-headset text-3xl"></i>
-                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">ASESORIAS</span>
-                </div>
-
-                <div class="bg-[#a0a0a0] text-white flex items-center justify-center gap-3 py-5 px-4">
-                    <i class="fas fa-circle-down text-3xl"></i>
-                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">BAJO COSTO</span>
+                <div id="nosotros" class="contact-box">
+                    <h3>QUIENES SOMOS</h3>
+                    <p>Somos una empresa dedicada a ofrecer repuestos de automóviles con atención personalizada, asesoría y soluciones rápidas para tus necesidades automotrices.</p>
+                    <p>Trabajamos para brindarte buen precio, garantía y confianza en cada compra.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-white text-center py-6 mt-10">
-        <p class="text-sm">&copy; 2026 Inversiones FB Parts, C.A. Todos los derechos reservados.</p>
+    <section id="taller" class="block">
+        <div class="container">
+            <h2 class="section-title">TALLER MOTOR PERFECT</h2>
+            <div class="testimonial-wrap">
+                <p>Espacio reservado para integrar información del taller, servicios, ubicación o enlace directo, tal como aparece en tu sitio original.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="oswald" style="margin:0; font-size:16px;">©2023 por F&B PARTS.</p>
     </footer>
 
 </body>
