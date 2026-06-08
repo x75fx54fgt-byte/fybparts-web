@@ -10,10 +10,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
         h1, h2, h3, .oswald { font-family: 'Oswald', sans-serif; }
         body { font-family: 'Roboto', sans-serif; background-color: #ffffff; color: #333333; }
+
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1920');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+            url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1920');
             background-size: cover;
             background-position: center;
+        }
+
+        .hero-overlay {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(2px);
         }
     </style>
 </head>
@@ -57,14 +64,60 @@
         </div>
     </header>
 
-    <section class="hero-bg text-white text-center py-32 px-4">
-        <h3 class="text-lg md:text-xl tracking-widest mb-2">REPUESTOS DE AUTOMÓVILES</h3>
-        <h1 class="text-4xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight mb-8">
-            TODO LO QUE NECESITES EN UN SOLO LUGAR
-        </h1>
-        <a href="https://api.whatsapp.com/send?phone=584120161036" target="_blank" class="border-2 border-white hover:bg-white hover:text-black transition duration-300 font-bold py-3 px-8 text-lg inline-block">
-            SOBRE NOSOTROS...
-        </a>
+    <section class="hero-bg relative text-white min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <button class="absolute left-4 md:left-10 text-white text-4xl md:text-6xl z-20 opacity-90 hover:opacity-100 transition">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <button class="absolute right-4 md:right-10 text-white text-4xl md:text-6xl z-20 opacity-90 hover:opacity-100 transition">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="relative z-10 hero-overlay w-[92%] md:w-[70%] max-w-5xl px-6 md:px-16 py-14 md:py-20 text-center shadow-2xl">
+            <h3 class="text-lg md:text-2xl tracking-[0.3em] mb-3 text-[#587b68] font-bold oswald">
+                REPUESTOS DE AUTOMÓVILES
+            </h3>
+            <h1 class="text-4xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight mb-8 text-[#587b68]">
+                TODO LO QUE NECESITES EN UN SOLO LUGAR
+            </h1>
+            <a href="https://api.whatsapp.com/send?phone=584120161036" target="_blank" class="bg-[#587b68] hover:bg-[#48685a] transition duration-300 text-white font-bold py-3 px-8 text-lg inline-block tracking-widest">
+                SOBRE NOSOTROS ...
+            </a>
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+            <span class="w-3 h-3 rounded-full bg-white"></span>
+            <span class="w-3 h-3 rounded-full bg-white/70"></span>
+            <span class="w-3 h-3 rounded-full bg-white/70"></span>
+        </div>
+    </section>
+
+    <section class="bg-white py-6 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div class="bg-[#8a99a0] text-white flex items-center justify-center gap-3 py-5 px-4">
+                    <i class="fas fa-hand-holding-dollar text-3xl"></i>
+                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">GARANTIA</span>
+                </div>
+
+                <div class="bg-[#8f9a94] text-white flex items-center justify-center gap-3 py-5 px-4">
+                    <i class="fas fa-truck text-3xl"></i>
+                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">ENVIO GRATIS</span>
+                </div>
+
+                <div class="bg-[#94a19a] text-white flex items-center justify-center gap-3 py-5 px-4">
+                    <i class="fas fa-headset text-3xl"></i>
+                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">ASESORIAS</span>
+                </div>
+
+                <div class="bg-[#a0a0a0] text-white flex items-center justify-center gap-3 py-5 px-4">
+                    <i class="fas fa-circle-down text-3xl"></i>
+                    <span class="text-2xl md:text-3xl font-bold oswald tracking-wider">BAJO COSTO</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="bg-black text-white text-center py-6 mt-10">
